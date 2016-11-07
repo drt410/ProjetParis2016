@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ProjetParis2016:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProjetParis2016_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ProjetParis2016/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ProjetParis2016" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
