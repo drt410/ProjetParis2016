@@ -16,10 +16,13 @@ public class Utilisateur implements Serializable {
     private int id;
     private String nom;
     private String motdePasse;
+    private String type;
 
-    public Utilisateur(String nom, String motdePasse) {
+
+    public Utilisateur(String nom, String motdePasse, String type) {
         this.nom = nom;
         this.motdePasse = motdePasse;
+        this.type = type;
     }
 
     public Utilisateur() {
@@ -47,5 +50,13 @@ public class Utilisateur implements Serializable {
 
     public void setMotdePasse(String motdePasse) {
         this.motdePasse = motdePasse;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

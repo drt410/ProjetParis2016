@@ -13,12 +13,10 @@ public class Bookmakers implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
     private String nom;
-    private int limcoins;
     private List<Cote> coteList;
 
-    public Bookmakers(String nom, int limcoins, List<Cote> coteList) {
+    public Bookmakers(String nom, List<Cote> coteList) {
         this.nom = nom;
-        this.limcoins = limcoins;
         this.coteList = coteList;
     }
 
@@ -41,15 +39,6 @@ public class Bookmakers implements Serializable {
     public void setNom(String nom) {
         this.nom = nom;
     }
-
-    public int getLimcoins() {
-        return limcoins;
-    }
-
-    public void setLimcoins(int limcoins) {
-        this.limcoins = limcoins;
-    }
-
 
     public List<Cote> getCoteList() {
         return coteList;

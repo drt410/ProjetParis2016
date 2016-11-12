@@ -46,10 +46,15 @@ public class UtilisateurController {
     public void addNewUtilisateur() {
         utilisateur = utilisateurEJB.addNew(utilisateur);
 
-        parieur = new Parieur(utilisateur.getNom(),1000,null,null);
-        bookmakers = new Bookmakers(utilisateur.getNom(),1000,null);
-        parieur = parieurEJB.addNew(parieur);
-        bookmakers = bookmakersEJB.addNew(bookmakers);
+        if(utilisateur.getType()=="Parieur"){
+            parieur = new Parieur(utilisateur.getNom(),1000,null,null);
+            parieur = parieurEJB.addNew(parieur);
+        }
+        else if(utilisateur.getType()=="Bookmakers") {
+            bookmakers = new Bookmakers(utilisateur.getNom(), null);
+
+            bookmakers = bookmakersEJB.addNew(bookmakers);
+        }
         utilisateurList = utilisateurEJB.findUtilisateur();
         //return "employeeList.xhtml";
     }

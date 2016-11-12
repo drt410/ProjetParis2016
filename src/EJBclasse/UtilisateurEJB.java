@@ -43,14 +43,14 @@ public class UtilisateurEJB {
     public String validate(String nom,String mdp) {
         String flag="failure";
 
-        Query q = entityManager.createQuery("SELECT u.id,u.nom,u.motdePasse FROM Utilisateur u where u.nom =:login AND u.motdePasse = :pass ");
+        Query q = entityManager.createQuery("SELECT u.id,u.nom,u.motdePasse,u.type FROM Utilisateur u where u.nom =:login AND u.motdePasse = :pass ");
         q.setParameter("login",nom);
         q.setParameter("pass",mdp);
         try{
             Utilisateur user = (Utilisateur) q.getSingleResult();
             System.out.println("HELLO");
 
-                flag="success";
+            flag="success";
 
 
         }catch(Exception e){
