@@ -43,7 +43,7 @@ public class UtilisateurEJB {
     public String validate(String nom,String mdp) {
         String flag="failure";
 
-        Query q = entityManager.createQuery("SELECT u.id,u.nom,u.motdePasse,u.type FROM Utilisateur u where u.nom =:login AND u.motdePasse = :pass ");
+        Query q = entityManager.createQuery("SELECT u.id,u.nom_utilisateur,u.mdp_utilisateur,u.type_utilisateur FROM Utilisateur u where u.nom_utilisateur =:login AND u.mdp_utilisateur = :pass ");
         q.setParameter("login",nom);
         q.setParameter("pass",mdp);
         try{

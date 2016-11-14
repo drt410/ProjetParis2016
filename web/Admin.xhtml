@@ -11,7 +11,7 @@
 </h:head>
 <h:body>
     <h3 style="text-align: center;">Création d'utilisateur</h3>
-    <h:form class="form-style-1">
+    <h:form>
         <h:panelGrid columns="2">
             <h:outputLabel value="Nom : "/>
             <h:inputText value="#{UserBean.utilisateur.nom}"/>
@@ -42,20 +42,20 @@
                        action="#{uc.deleteUser(usr)}" />
     </h:column>
     </h:dataTable>
-    <h3 style="text-align: center;">Liste d'enrichisseur</h3>
+    <h3 style="text-align: center;">Liste de parieur</h3>
 
-    <h:dataTable value="#{EncherisseurBean.encherisseurList}" var="ench"  border="1">
+    <h:dataTable value="#{ParieurBean.parieurList}" var="pari"  border="1">
         <h:column>
             <f:facet name="header">
                 <h:outputText value="Nom"/>
             </f:facet>
-            <h:outputText value="#{ench.nom}"/>
+            <h:outputText value="#{pari.nom}"/>
         </h:column>
         <h:column>
             <f:facet name="header">
                 <h:outputText value="Limcoins"/>
             </f:facet>
-            <h:outputText value="#{ench.limcoins}"/>
+            <h:outputText value="#{pari.limcoins}"/>
         </h:column>
         <h:column>
             <h:commandLink value="edit"
@@ -64,9 +64,9 @@
                            action="#{uc.deleteUser(usr)}" />
         </h:column>
     </h:dataTable>
-    <h3 style="text-align: center;">Liste de vendeur</h3>
+    <h3 style="text-align: center;">Liste de Bookmakers</h3>
 
-    <h:dataTable value="#{VendeurBean.vendeurList}" var="vdr"  border="1">
+    <h:dataTable value="#{BookmakersBean.bookmakersList}" var="vdr"  border="1">
         <h:column>
             <f:facet name="header">
                 <h:outputText value="Nom"/>
