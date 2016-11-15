@@ -47,11 +47,11 @@ public class UtilisateurController {
    public void addNewUtilisateur() {
         utilisateur = utilisateurEJB.addNew(utilisateur);
 
-        if(utilisateur.getType()=="Parieur"){
+        if(utilisateur.getType()=="parieur"){
             parieur = new Parieur(utilisateur.getNom(),1000,null,null);
             parieur = parieurEJB.addNew(parieur);
         }
-        else if(utilisateur.getType()=="Bookmakers") {
+        else if(utilisateur.getType()=="bookmakers") {
             bookmakers = new Bookmakers(utilisateur.getNom(), null);
 
             bookmakers = bookmakersEJB.addNew(bookmakers);

@@ -11,7 +11,7 @@
 
     <managed-bean>
         <managed-bean-name>ParieurBean</managed-bean-name>
-        <managed-bean-class>Controller.PariController</managed-bean-class>
+        <managed-bean-class>Controller.ParieurController</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>

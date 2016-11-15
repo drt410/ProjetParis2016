@@ -6,15 +6,13 @@
         <class>Java.Utilisateur</class>
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <properties>
-            <property name="eclipselink.target-database" value="derby"/>
             <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
-            <property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_ddlGeneration.jdbc"/>
-            <property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlGeneration.jdbc"/>
-            <property name="eclipselink.ddl-generation.output-mode" value="both"/>
-            <property name="eclipselink.jdbc.url" value="jdbc:derby://localhost:1527/D:/Application/glassfish4/javadb/bin/Paris2016;create=true"/>
+            <property name="eclipselink.target-database" value="derby"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:derby://localhost:1527/Paris2016;create=true;"/>
             <property name="eclipselink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
             <property name="eclipselink.jdbc.user" value ="app"/>
             <property name="eclipselink.jdbc.password" value ="app"/>
+
         </properties>
     </persistence-unit>
 </persistence>

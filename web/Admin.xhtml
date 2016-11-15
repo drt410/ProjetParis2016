@@ -50,7 +50,28 @@
                            action="#{uc.deleteUser(usr)}" />
         </h:column>
     </h:dataTable>
+    <h3 style="text-align: center;">Liste de Parieur</h3>
 
+    <h:dataTable value="#{ParieurBean.parieurList}" var="parieur"  border="1">
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Nom"/>
+            </f:facet>
+            <h:outputText value="#{parieur.nom}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Limcoins"/>
+            </f:facet>
+            <h:outputText value="#{parieur.limcoins}"/>
+        </h:column>
+        <h:column>
+            <h:commandLink value="edit"
+                           action="#{uc.editUser(usr)}" /> |
+            <h:commandLink value="delete"
+                           action="#{uc.deleteUser(usr)}" />
+        </h:column>
+    </h:dataTable>
 
 </h:body>
 </html>
