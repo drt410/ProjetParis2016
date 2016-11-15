@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Stateless
 public class ParieurEJB {
-    @PersistenceContext(unitName = "NewPersistenceUnit")
+    @PersistenceContext(unitName = "PersistenceUnit")
     private EntityManager entityManager;
 
     public List<Parieur> findParieur(){

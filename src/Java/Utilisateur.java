@@ -7,22 +7,25 @@ import java.io.Serializable;
  * Created by tran on 31/10/2016.
  */
 @Entity
-@Table(name = "UTILISATEUR")
-@NamedQuery(name = "findUtilisateur", query = "SELECT u FROM Utilisateur u")
+@Table(name = "UTILISATEUR",schema = "APP")
+@NamedQuery(name = "allUser", query = "SELECT u FROM Utilisateur u")
 public class Utilisateur implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "ID")
     private int id;
+    @Column(name = "NOM")
     private String nom;
+    @Column(name = "MOTDEPASSE")
     private String motdePasse;
+    @Column(name = "type")
     private String type;
 
 
-    public Utilisateur(String nom, String motdePasse, String type) {
+    public Utilisateur(String nom, String motdePasse) {
         this.nom = nom;
         this.motdePasse = motdePasse;
-        this.type = type;
     }
 
     public Utilisateur() {
@@ -59,4 +62,12 @@ public class Utilisateur implements Serializable {
     public void setType(String type) {
         this.type = type;
     }
+
+    /*public String getCompte() {
+        return compte;
+    }
+
+    public void setCompte(String compte) {
+        this.compte = compte;
+    }*/
 }

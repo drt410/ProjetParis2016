@@ -11,12 +11,14 @@
 </h:head>
 <h:body>
     <h3 style="text-align: center;">Création d'utilisateur</h3>
-    <h:form>
+    <h:form class="form-style-1">
         <h:panelGrid columns="2">
             <h:outputLabel value="Nom : "/>
             <h:inputText value="#{UserBean.utilisateur.nom}"/>
             <h:outputLabel value="Mot de passe :"/>
             <h:inputText value="#{UserBean.utilisateur.motdePasse}"/>
+            <h:outputLabel value="Type:"/>
+            <h:inputText value="#{UserBean.utilisateur.type}"/>
         </h:panelGrid>
         <h:commandButton value="Créer Nouvelle utilisateur"
                          action="#{UserBean.addNewUtilisateur()}"/>
@@ -36,26 +38,10 @@
             <h:outputText value="#{user.motdePasse}"/>
         </h:column>
         <h:column>
-        <h:commandLink value="edit"
-                       action="#{uc.editUser(usr)}" /> |
-        <h:commandLink value="delete"
-                       action="#{uc.deleteUser(usr)}" />
-    </h:column>
-    </h:dataTable>
-    <h3 style="text-align: center;">Liste de parieur</h3>
-
-    <h:dataTable value="#{ParieurBean.parieurList}" var="pari"  border="1">
-        <h:column>
             <f:facet name="header">
-                <h:outputText value="Nom"/>
+                <h:outputText value="type"/>
             </f:facet>
-            <h:outputText value="#{pari.nom}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">
-                <h:outputText value="Limcoins"/>
-            </f:facet>
-            <h:outputText value="#{pari.limcoins}"/>
+            <h:outputText value="#{user.type}"/>
         </h:column>
         <h:column>
             <h:commandLink value="edit"
@@ -64,28 +50,7 @@
                            action="#{uc.deleteUser(usr)}" />
         </h:column>
     </h:dataTable>
-    <h3 style="text-align: center;">Liste de Bookmakers</h3>
 
-    <h:dataTable value="#{BookmakersBean.bookmakersList}" var="vdr"  border="1">
-        <h:column>
-            <f:facet name="header">
-                <h:outputText value="Nom"/>
-            </f:facet>
-            <h:outputText value="#{vdr.nom}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">
-                <h:outputText value="Limcoins"/>
-            </f:facet>
-            <h:outputText value="#{vdr.limcoins}"/>
-        </h:column>
-        <h:column>
-            <h:commandLink value="edit"
-                           action="#{uc.editUser(usr)}" /> |
-            <h:commandLink value="delete"
-                           action="#{uc.deleteUser(usr)}" />
-        </h:column>
-    </h:dataTable>
 
 </h:body>
 </html>

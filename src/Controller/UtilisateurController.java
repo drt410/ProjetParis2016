@@ -31,6 +31,7 @@ public class UtilisateurController {
     private List<Utilisateur> utilisateurList = new ArrayList<>();
     private String userName;
     private String password;
+    private String compte;
     private boolean edit;
 
     public UtilisateurController() {
@@ -43,7 +44,7 @@ public class UtilisateurController {
         return  utilisateurList;
     }
 
-    public void addNewUtilisateur() {
+   public void addNewUtilisateur() {
         utilisateur = utilisateurEJB.addNew(utilisateur);
 
         if(utilisateur.getType()=="Parieur"){
@@ -93,6 +94,14 @@ public class UtilisateurController {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getCompte() {
+        return compte;
+    }
+
+    public void setCompte(String compte) {
+        this.compte = compte;
     }
 
     public boolean isEdit() {

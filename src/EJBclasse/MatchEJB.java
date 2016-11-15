@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Stateful
 public class MatchEJB {
-    @PersistenceContext(unitName = "NewPersistenceUnit")
+    @PersistenceContext(unitName = "PersistenceUnit")
     private EntityManager entityManager;
 
     public List<Match> findMatch(){

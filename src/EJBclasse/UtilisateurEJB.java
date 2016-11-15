@@ -14,11 +14,11 @@ import java.util.List;
  */
 @Stateless
 public class UtilisateurEJB {
-    @PersistenceContext(unitName = "NewPersistenceUnit")
+    @PersistenceContext(unitName = "PersistenceUnit")
     private EntityManager entityManager;
 
     public List<Utilisateur> findUtilisateur(){
-        TypedQuery<Utilisateur> query = entityManager.createNamedQuery("findUtilisateur", Utilisateur.class);
+        TypedQuery<Utilisateur> query = entityManager.createNamedQuery("allUser", Utilisateur.class);
         return query.getResultList();
     }
 
@@ -43,7 +43,7 @@ public class UtilisateurEJB {
     public String validate(String nom,String mdp) {
         String flag="failure";
 
-        Query q = entityManager.createQuery("SELECT u.id,u.nom_utilisateur,u.mdp_utilisateur,u.type_utilisateur FROM Utilisateur u where u.nom_utilisateur =:login AND u.mdp_utilisateur = :pass ");
+        Query q = entityManager.createQuery("SELECT u FROM Utilisateur u where u.nom =:login AND u.motdePasse = :pass ");
         q.setParameter("login",nom);
         q.setParameter("pass",mdp);
         try{
